@@ -58,7 +58,7 @@ const Contact = () => {
               </Link>
             </div>
             <div className={styles.link}>
-              <Link href='https://twitter.com/'>
+              <Link href='https://twitter.com/bishtshivanshu'>
                 <Image src={twitter} alt='twitter' />
               </Link>
             </div>

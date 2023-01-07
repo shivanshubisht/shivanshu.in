@@ -7,11 +7,11 @@ interface skillsProps {
   title: string;
 }
 
-// declare global {
-//   interface Window {
-//     TagCanvas: any;
-//   }
-// }
+declare global {
+  interface Window {
+    TagCanvas: any;
+  }
+}
 
 var global = globalThis;
 

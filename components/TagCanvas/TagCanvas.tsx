@@ -13,8 +13,6 @@ declare global {
   }
 }
 
-var global = globalThis;
-
 const skills: skillsProps[] = [
   { href: '#html', title: 'HTML' },
   { href: '#css', title: 'CSS' },

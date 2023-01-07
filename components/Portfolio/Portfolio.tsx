@@ -1,6 +1,6 @@
 import styles from './Portfolio.module.css';
 import image1 from '../../images/e-commerce-with-nextjs.jpg';
-import image2 from '../../images/url-shortner.png';
+import image2 from '../../images/url-shortener.png';
 import image3 from '../../images/twitter.svg';
 import image4 from '../../images/chatgpt.webp';
 import Image from 'next/image';
@@ -27,7 +27,7 @@ const Portfolio: React.FC = () => {
           </Link>
           <Link
             className={styles.tile}
-            href='https://url-shortner.shivanshu.in/'
+            href='https://url-shortener.shivanshu.in/'
           >
             <Image
               className={styles.tile__background}
@@ -37,7 +37,7 @@ const Portfolio: React.FC = () => {
             />
             <div className={styles.tile__content}>
               <p className={styles.tile__category}>Project</p>
-              <h3 className={styles.tile__heading}>URL Shortner</h3>
+              <h3 className={styles.tile__heading}>URL Shortener</h3>
             </div>
           </Link>
           <Link className={styles.tile} href='https://twitter.shivanshu.in/'>

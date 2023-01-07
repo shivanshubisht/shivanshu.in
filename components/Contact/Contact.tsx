@@ -72,34 +72,21 @@ const Contact: React.FC = () => {
         <div className={styles.contact_form_wrapper}>
           <form onSubmit={handleSubmit}>
             <div className={styles.form_item}>
-              <label htmlFor='name'>Name:</label>
-              <input
-                type='text'
-                name='sender'
-                id='name'
-                ref={nameInput}
-                required
-              />
+              <input type='text' name='sender' ref={nameInput} required />
+              <label>Name:</label>
             </div>
             <div className={styles.form_item}>
-              <label htmlFor='email'>Email:</label>
-              <input
-                type='email'
-                name='email'
-                id='email'
-                ref={emailInput}
-                required
-              />
+              <input type='email' name='email' ref={emailInput} required />
+              <label>Email:</label>
             </div>
             <div className={styles.form_item}>
-              <label htmlFor='message'>Message:</label>
               <textarea
                 className={styles.form_item}
                 name='message'
-                id='message'
                 ref={messageInput}
                 required
               ></textarea>
+              <label>Message:</label>
             </div>
             <div className='message' style={{ color: '#1de4e7' }}></div>
             <button className={styles.contact_button}>

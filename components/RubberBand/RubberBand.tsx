@@ -1,11 +1,12 @@
 'use client';
 import { useEffect, useRef } from 'react';
 
-type RubberBandProps = {
+interface RubberBandProps {
   text: string;
   type: 'heading' | 'subheading';
-};
-const RubberBand = ({ text, type }: RubberBandProps) => {
+}
+
+const RubberBand: React.FC<RubberBandProps> = ({ text, type }) => {
   const textElRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {

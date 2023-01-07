@@ -1,13 +1,13 @@
 import styles from './Portfolio.module.css';
 import image1 from '../../images/e-commerce-with-nextjs.jpg';
 import image2 from '../../images/url-shortner.png';
-import image3 from '../../images/netflix.jpg';
+import image3 from '../../images/twitter.svg';
 import image4 from '../../images/chatgpt.webp';
 import Image from 'next/image';
 import Link from 'next/link';
 import RubberBand from '../RubberBand/RubberBand';
 
-const Portfolio = () => {
+const Portfolio: React.FC = () => {
   return (
     <section id='portfolio'>
       <div className={styles.container_portfolio}>
@@ -40,16 +40,21 @@ const Portfolio = () => {
               <h3 className={styles.tile__heading}>URL Shortner</h3>
             </div>
           </Link>
-          <Link className={styles.tile} href='https://video.shivanshu.in/'>
+          <Link className={styles.tile} href='https://twitter.shivanshu.in/'>
             <Image
               className={styles.tile__background}
               src={image3}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              alt='netflix-clone'
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'fill',
+                background: '#191919',
+              }}
+              alt='twitter-clone'
             />
             <div className={styles.tile__content}>
               <p className={styles.tile__category}>Project</p>
-              <h3 className={styles.tile__heading}>Netflix Clone</h3>
+              <h3 className={styles.tile__heading}>Twitter Clone</h3>
             </div>
           </Link>
           <Link className={styles.tile} href='https://chatgpt.shivanshu.in/'>

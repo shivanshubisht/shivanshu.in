@@ -2,7 +2,7 @@ import RubberBand from '../RubberBand/RubberBand';
 import TagCanvas from '../TagCanvas/TagCanvas';
 import styles from './About.module.css';
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <section id='about'>
       <div className={styles.container_about}>

@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 import logo from '../../images/shivanshu-icon.png';
 import Image from 'next/image';
 
-const Header = () => {
+const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = () => {

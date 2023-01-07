@@ -24,6 +24,7 @@ const Main: React.FC = () => {
           scaleMobile: 1.0,
           color: 0x3fe8ff,
           backgroundColor: 0x0b2535,
+          showDots: false,
         })
       );
     }

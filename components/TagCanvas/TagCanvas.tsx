@@ -7,11 +7,13 @@ interface skillsProps {
   title: string;
 }
 
-declare global {
-  interface Window {
-    TagCanvas: any;
-  }
-}
+// declare global {
+//   interface Window {
+//     TagCanvas: any;
+//   }
+// }
+
+var global = globalThis;
 
 const skills: skillsProps[] = [
   { href: '#html', title: 'HTML' },
@@ -34,7 +36,7 @@ const skills: skillsProps[] = [
   { href: '#Astro', title: 'Astro' },
 ];
 
-const TagCanvas = () => {
+const TagCanvas: React.FC = () => {
   useEffect(() => {
     const TagCanvas = window.TagCanvas;
     const tagCanvasOptions = {

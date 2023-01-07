@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import RubberBand from '../RubberBand/RubberBand';
 import styles from './Skills.module.css';
 
-const MySkills = () => {
+const MySkills: React.FC = () => {
   useEffect(() => {
     const divs = document.querySelectorAll('.skills_chart');
 

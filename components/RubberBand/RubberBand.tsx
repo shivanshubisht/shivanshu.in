@@ -29,8 +29,7 @@ const RubberBand: React.FC<RubberBandProps> = ({ text, type }) => {
     textElRef.current!.innerHTML = html;
 
     const hoverEl = document.querySelectorAll('.letter');
-    // @ts-ignore
-    hoverEl.forEach((letter: any) => {
+    hoverEl.forEach((letter: Element) => {
       letter.addEventListener('mouseover', hover);
       // @ts-ignore
       function hover(event: any) {

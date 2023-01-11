@@ -1,6 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '../../server/db/client';
 
+export const config = {
+  runtime: 'experimental-edge',
+  regions: ['bom1']
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

@@ -61,13 +61,13 @@ const MySkills: React.FC = () => {
           <RubberBand text='My Skills' type='subheading' />
           <p className={styles.myskills}>
             My expertise is in the front-end development of web applications. I
-            specialize in React, NextJS, and TailwindCSS. I have experience with
-            other frameworks and libraries such as Bootstrap, Material UI, and
+            specialize in React, NextJS, PostgreSQL and TailwindCSS. I have experience with
+            other frameworks and libraries such as Radix UI, Material UI, and
             Styled-Components.
           </p>
           <p className={styles.myskills}>
             I have worked with various technologies like React, Next.js,
-            TailwindCSS and have previous experience with WordPress and PHP.
+            TailwindCSS and have built various projects over it.
           </p>
           <p className={styles.myskills}>
             I&apos;m also a big fan of JAMStack, and I&apos;m always looking for

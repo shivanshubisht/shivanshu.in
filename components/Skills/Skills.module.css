@@ -235,11 +235,11 @@ p.myskills {
 }
 
 .card .bar.bar1:before {
-  content: url(../../images/skills-icons/css-3.svg);
+  content: url('../../images/skills-icons/css-3.svg');
 }
 
 .card .bar.bar2:before {
-  content: url(../../images/skills-icons/js.svg);
+  content: url('../../images/skills-icons/js.svg');
 }
 
 .card .bar.bar3:before {

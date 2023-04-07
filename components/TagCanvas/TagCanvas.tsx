@@ -1,15 +1,16 @@
-'use client';
-import Script from 'next/script';
-import { useEffect } from 'react';
+'use client'
+import Script from 'next/script'
+import { useEffect } from 'react'
+import { start } from 'repl'
 
 interface skillsProps {
-  href: string;
-  title: string;
+  href: string
+  title: string
 }
 
 declare global {
   interface Window {
-    TagCanvas: any;
+    TagCanvas: any
   }
 }
 
@@ -20,23 +21,28 @@ const skills: skillsProps[] = [
   { href: '#typescript', title: 'TypeScript' },
   { href: '#react', title: 'React' },
   { href: '#nextjs', title: 'Next JS' },
-  { href: '#es7', title: 'ES7' },
+  { href: '#es13', title: 'ES13' },
   { href: '#json', title: 'JSON' },
-  { href: '#bootstrap', title: 'BootStrap' },
   { href: '#tailwind', title: 'Tailwind' },
-  { href: '#wordpress', title: 'Wordpress' },
-  { href: '#php', title: 'PHP' },
   { href: '#c++', title: 'C++' },
   { href: '#nodejs', title: 'Node JS' },
   { href: '#git', title: 'Git' },
   { href: '#npm', title: 'npm' },
   { href: '#nvim', title: 'nvim' },
-  { href: '#Astro', title: 'Astro' },
-];
+  { href: '#astro', title: 'Astro' },
+  { href: '#solidjs', title: 'Solid JS' },
+  { href: '#solidstart', title: 'Solid Start' },
+  { href: '#radixui', title: 'Radix UI' },
+  { href: '#prisma', title: 'Prisma' },
+  { href: '#trpc', title: 'tRPC' },
+  { href: '#postgresql', title: 'PostgreSQL' },
+  { href: '#zod', title: 'zod' },
+  { href: '#nextauth', title: 'Next Auth' },
+]
 
 const TagCanvas: React.FC = () => {
   useEffect(() => {
-    const TagCanvas = window.TagCanvas;
+    const TagCanvas = window.TagCanvas
     const tagCanvasOptions = {
       textColour: '#1de4e7',
       outlineColour: 'transparent',
@@ -48,9 +54,9 @@ const TagCanvas: React.FC = () => {
       shuffleTags: true,
       wheelZoom: true,
       fadeIn: 1000,
-    };
-    TagCanvas.Start('tagcanvas', 'taglist', tagCanvasOptions);
-  }, []);
+    }
+    TagCanvas.Start('tagcanvas', 'taglist', tagCanvasOptions)
+  }, [])
 
   return (
     <div className='container'>
@@ -80,7 +86,7 @@ const TagCanvas: React.FC = () => {
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TagCanvas;
+export default TagCanvas

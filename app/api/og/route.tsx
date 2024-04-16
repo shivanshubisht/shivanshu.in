@@ -1,9 +1,7 @@
 import { ImageResponse } from '@vercel/og'
 
-export const config = {
-  runtime: 'edge',
-  // regions: ['bom1'],
-}
+export const runtime = 'edge'
+// export const preferredRegion = 'bom1'
 
 export async function GET() {
   return new ImageResponse(

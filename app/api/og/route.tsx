@@ -1,11 +1,11 @@
-import { ImageResponse } from '@vercel/og';
+import { ImageResponse } from '@vercel/og'
 
 export const config = {
   runtime: 'edge',
-  regions: ['bom1'],
-};
+  // regions: ['bom1'],
+}
 
-export default function handler() {
+export async function GET() {
   return new ImageResponse(
     (
       <div
@@ -42,5 +42,5 @@ export default function handler() {
       width: 1200,
       height: 630,
     }
-  );
+  )
 }

@@ -1,46 +1,53 @@
-'use client';
-import styles from './Contact.module.css';
-import linkedin from '../../images/icons/linkedin.png';
-import github from '../../images/icons/github.png';
-import twitter from '../../images/icons/twitter.png';
-import gmail from '../../images/icons/gmail.ico';
+'use client'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRef, useState, type FormEvent } from 'react'
+import github from '../../images/icons/github.png'
+import gmail from '../../images/icons/gmail.ico'
+import linkedin from '../../images/icons/linkedin.png'
+import twitter from '../../images/icons/twitter.png'
+import RubberBand from '../RubberBand/RubberBand'
+import styles from './Contact.module.css'
 
-import { useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import axios from 'axios';
-import RubberBand from '../RubberBand/RubberBand';
+const Contact = () => {
+  const nameInput = useRef<HTMLInputElement | null>(null)
+  const emailInput = useRef<HTMLInputElement | null>(null)
+  const messageInput = useRef<HTMLTextAreaElement | null>(null)
+  const [message, setMessage] = useState('')
 
-const Contact: React.FC = () => {
-  const nameInput = useRef<HTMLInputElement | null>(null);
-  const emailInput = useRef<HTMLInputElement | null>(null);
-  const messageInput = useRef<HTMLTextAreaElement | null>(null);
-
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const name = nameInput.current?.value;
-    const email = emailInput.current?.value;
-    const message = messageInput.current?.value;
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const name = nameInput.current?.value
+    const email = emailInput.current?.value
+    const message = messageInput.current?.value
     if (!name || !email || !message) {
-      return;
+      return
     }
     try {
-      const { data } = await axios.post('/api/contact', {
-        name,
-        email,
-        message,
-      });
-      const messageElement = document.querySelector('.message');
-      if (messageElement) {
-        messageElement.textContent = 'Message submitted successfully!';
-        nameInput.current!.value = '';
-        emailInput.current!.value = '';
-        messageInput.current!.value = '';
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      })
+      if (!response.ok) {
+        throw new Error('Failed to submit message')
+      }
+      if (response.ok) {
+        setMessage('Message submitted successfully!')
+        nameInput.current!.value = ''
+        emailInput.current!.value = ''
+        messageInput.current!.value = ''
       }
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
   return (
     <section id='contact'>
       <div className={styles.contact_box}>
@@ -88,7 +95,7 @@ const Contact: React.FC = () => {
               ></textarea>
               <label>Message:</label>
             </div>
-            <div className='message' style={{ color: '#1de4e7' }}></div>
+            <div style={{ color: '#1de4e7' }}>{message}</div>
             <button className={styles.contact_button}>
               <div>
                 <span className={styles.bg}></span>
@@ -100,7 +107,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

@@ -1,7 +1,7 @@
-import { ImageResponse } from '@vercel/og'
+import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-// export const preferredRegion = 'bom1'
+// export const preferredRegion = ['bom1']
 
 export async function GET() {
   return new ImageResponse(

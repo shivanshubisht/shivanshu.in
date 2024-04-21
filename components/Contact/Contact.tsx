@@ -36,6 +36,7 @@ const Contact = () => {
         }),
       })
       if (!response.ok) {
+        setMessage('Failed to submit message')
         throw new Error('Failed to submit message')
       }
       if (response.ok) {

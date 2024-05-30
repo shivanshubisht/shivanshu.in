@@ -12,8 +12,7 @@ const contactSchema = z.object({
 });
 
 export async function POST(request: Request) {
-  const data = await request.json();
-  const { name, email, message } = contactSchema.parse(data);
+  const { name, email, message } = contactSchema.parse(await request.json());
   const startTime = Date.now();
   const result = await db.insert(contacts).values({ name, email, message });
   const endTime = Date.now();
